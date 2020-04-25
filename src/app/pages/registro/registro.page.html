@@ -1,0 +1,28 @@
+
+<ion-content class="overlay-container">
+
+    <div class="overlay-container">
+      <form (ngSubmit)="registrarUser(Fregistro)" #Fregistro="ngForm">
+        <h1>Crea tu cuenta</h1>
+        <span>Ingrese los datos para el registro</span>
+        <input type="text" name="nombre" [(ngModel)]="formModel.FullName" placeholder="Nombres Completos" required>
+        <input type="email" name="email" [(ngModel)]="formModel.Email" placeholder="Email" required>
+        <input type="text" name="telefono" [(ngModel)]="formModel.Phone" placeholder="Telefono" required>
+        <input type="text" name="username" [(ngModel)]="formModel.UserName" placeholder="Nick Name" required>
+        <input type="password" name="password" [(ngModel)]="formModel.Password" placeholder="Password" required>
+        <ion-button type="submit">Registrase</ion-button>
+        <a (click)="irLogin()">Ya tengo cuenta</a>
+      </form>
+        <!-- <form [formGroup]="service.formulario" autocomplete="off" (ngSubmit)="guardar()">
+            
+            
+             formControlName="FullName" required/>
+            formControlName="Email" required/>
+            formControlName="Phone" required/>
+            formControlName="UserName" required/>
+             formControlName="Password" required/>
+            
+        </form> -->
+    </div>
+
+</ion-content>

@@ -1,0 +1,17 @@
+
+<ion-content class="overlay-container">
+
+  <div class="overlay-container">
+    <form #form="ngForm" autocomplete="off" (submit)="login(form)">
+        <h1>Ingresar</h1>
+
+        <span>Ingresa con tus credenciales</span>
+        <input type="text" placeholder="Usuario" name="UserName" [(ngModel)]="formModel.UserName" required/>
+        <input type="password" placeholder="Password" name="Password" [(ngModel)]="formModel.Password" required/>
+        <button type="submit" [disabled]="form.invalid">Ingresar</button>
+        <br>
+        <a (click)="irRegistro()">Registro </a>
+    </form>
+</div>
+
+</ion-content>

@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "home-outline",
+        "name": "Home",
+        "redirectTo": "/home"
+    },
+    {
+        "icon": "bookmark-outline",
+        "name": "Registrar",
+        "redirectTo": "/productos"
+    },
+    {
+        "icon": "reader-outline",
+        "name": "Factura",
+        "redirectTo": "/factura"
+    },
+    {
+        "icon": "log-out-outline",
+        "name": "Cerrar Sesion",
+        "redirectTo": "/login"
+    }
+]

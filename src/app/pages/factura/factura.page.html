@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="menu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title slot="end">factura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (submit)="factura(form)" autocomplete="off">
+    <ion-item>
+      <ion-label position="floating">Documento de indentidad</ion-label>
+      <ion-input type="text" name="documentO_C" [(ngModel)]="formModel.documentO_C"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre del cliente</ion-label>
+      <ion-input type="text" name="nombrE_C" [(ngModel)]="formModel.nombrE_C"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido del cliente</ion-label>
+      <ion-input type="text" name="apellidO_C" [(ngModel)]="formModel.apellidO_C"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input type="text" name="telefonO_C" [(ngModel)]="formModel.telefonO_C"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Producto</ion-label>
+      <ion-select name="id_producto" [(ngModel)]="formModel.id_producto">
+        <ion-select-option *ngFor="let prod of product" value="{{prod.iD_PRODUCTO}}">{{prod.nombrE_PRODUCTO}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="text" name="cantidad" [(ngModel)]="formModel.cantidad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="text" name="precio" [(ngModel)]="formModel.precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">SubTotal</ion-label>
+      <ion-input type="text" name="subtotal" value="{{ formModel.cantidad * formModel.precio || 0 }}" [(ngModel)]="formModel.subtotal"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Total con IVA</ion-label>
+      <ion-input value="{{ (formModel.cantidad * formModel.precio) * 1.19 || 0 }}" name="total" [(ngModel)]="formModel.total"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime [(ngModel)]="formModel.fecha" name="fecha" value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit" color="success">Registrar Factura</ion-button>
+    </ion-item>
+  </form>
+
+</ion-content>
